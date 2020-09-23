@@ -45,9 +45,9 @@ export const completeSpinnakerUndeploymentPipeline: SpinnakerPipeline = {
                 labels: {
                   component: 'A',
                   tag: 'v0',
-                  circleId: 'default-circle-id'
+                  circleId: 'circle-id'
                 },
-                name: 'default-circle-id'
+                name: 'circle-id'
               }
             ]
           }

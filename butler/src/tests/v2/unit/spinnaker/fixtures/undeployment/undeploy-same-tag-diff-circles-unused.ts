@@ -159,9 +159,9 @@ export const undeploySameTagDiffCirclesUnused: SpinnakerPipeline = {
                 labels: {
                   component: 'B',
                   tag: 'v1',
-                  circleId: 'default-circle-id'
+                  circleId: 'circle-id'
                 },
-                name: 'default-circle-id'
+                name: 'circle-id'
               }
             ]
           }
@@ -209,17 +209,17 @@ export const undeploySameTagDiffCirclesUnused: SpinnakerPipeline = {
                   {
                     destination: {
                       host: 'B',
-                      subset: 'default-circle-id'
+                      subset: 'circle-id'
                     },
                     headers: {
                       request: {
                         set: {
-                          'x-circle-source': 'default-circle-id'
+                          'x-circle-source': 'circle-id'
                         }
                       },
                       response: {
                         set: {
-                          'x-circle-source': 'default-circle-id'
+                          'x-circle-source': 'circle-id'
                         }
                       }
                     }

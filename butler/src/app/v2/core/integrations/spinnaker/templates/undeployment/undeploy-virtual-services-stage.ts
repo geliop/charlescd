@@ -70,7 +70,7 @@ export const getUndeploymentVirtualServiceStage = (
   type: 'deployManifest'
 })
 
-const getActiveComponentsCircleHTTPRules = (circleId: string | null, activeComponents: Component[]): Http[] => {
+const getActiveComponentsCircleHTTPRules = (circleId: string, activeComponents: Component[]): Http[] => {
   const rules: Http[] = []
 
   activeComponents.forEach(component => {
@@ -83,7 +83,7 @@ const getActiveComponentsCircleHTTPRules = (circleId: string | null, activeCompo
 
   const defaultComponent: Component | undefined = activeComponents.find(component => component.deployment && component.deployment.defaultCircle)
   if (defaultComponent) {
-    rules.push(getHTTPDefaultRule(defaultComponent.name))
+    rules.push(getHTTPDefaultRule(defaultComponent.name, circleId))
   }
   return rules
 }
@@ -152,22 +152,22 @@ const getHTTPHeaderCircleRule = (name: string, tag: string, circle: string): Htt
   ]
 })
 
-const getHTTPDefaultRule = (name: string): Http => ({
+const getHTTPDefaultRule = (name: string, circleId: string): Http => ({
   route: [
     {
       destination: {
         host: `${name}`,
-        subset: 'default-circle-id'
+        subset: circleId
       },
       headers: {
         request: {
           set: {
-            'x-circle-source': 'default-circle-id'
+            'x-circle-source': circleId
           }
         },
         response: {
           set: {
-            'x-circle-source': 'default-circle-id'
+            'x-circle-source': circleId
           }
         }
       }
