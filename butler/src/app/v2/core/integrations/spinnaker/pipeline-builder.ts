@@ -129,8 +129,7 @@ export class SpinnakerPipelineBuilder {
       return []
     }
     const proxyStages: Stage[] = []
-    console.log(deployment.components)
-    console.log(activeComponents)
+
     deployment.components.forEach(component => {
       const activeByName: Component[] = this.getActiveComponentsByName(activeComponents, component.name)
       proxyStages.push(getUndeploymentDestinationRulesStage(component, deployment, activeByName, this.currentStageId++))

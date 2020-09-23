@@ -44,9 +44,9 @@ export const undeploySameTagDiffCirclesUnused: SpinnakerPipeline = {
                 labels: {
                   component: 'A',
                   tag: 'v1',
-                  circleId: 'circle-id'
+                  circleId: 'default-circle-id'
                 },
-                name: 'circle-id'
+                name: 'default-circle-id'
               }
             ]
           }
@@ -94,17 +94,17 @@ export const undeploySameTagDiffCirclesUnused: SpinnakerPipeline = {
                   {
                     destination: {
                       host: 'A',
-                      subset: 'circle-id'
+                      subset: 'default-circle-id'
                     },
                     headers: {
                       request: {
                         set: {
-                          'x-circle-source': 'circle-id'
+                          'x-circle-source': 'default-circle-id'
                         }
                       },
                       response: {
                         set: {
-                          'x-circle-source': 'circle-id'
+                          'x-circle-source': 'default-circle-id'
                         }
                       }
                     }
@@ -159,9 +159,9 @@ export const undeploySameTagDiffCirclesUnused: SpinnakerPipeline = {
                 labels: {
                   component: 'B',
                   tag: 'v1',
-                  circleId: 'circle-id'
+                  circleId: 'default-circle-id'
                 },
-                name: 'circle-id'
+                name: 'default-circle-id'
               }
             ]
           }
@@ -209,17 +209,17 @@ export const undeploySameTagDiffCirclesUnused: SpinnakerPipeline = {
                   {
                     destination: {
                       host: 'B',
-                      subset: 'circle-id'
+                      subset: 'default-circle-id'
                     },
                     headers: {
                       request: {
                         set: {
-                          'x-circle-source': 'circle-id'
+                          'x-circle-source': 'default-circle-id'
                         }
                       },
                       response: {
                         set: {
-                          'x-circle-source': 'circle-id'
+                          'x-circle-source': 'default-circle-id'
                         }
                       }
                     }
